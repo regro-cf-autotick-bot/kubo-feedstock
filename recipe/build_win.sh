@@ -5,6 +5,11 @@ export GOPATH="$( pwd )"
 export CGO_ENABLED=0
 export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 
+# https://github.com/conda-forge/kubo-feedstock/issues/5
+export GOTMPDIR="$(pwd)/tmp"
+
+mkdir -p "${GOTMPDIR}"
+
 # omissions from the unix build, needs investigation
 # export GOTAGS="openssl"
 # export CGO_CFLAGS="${CFLAGS}"
@@ -18,3 +23,5 @@ make -C "src/${module}" install nofuse
 pushd "src/${module}"
     bash $RECIPE_DIR/build_library_licenses.sh
 popd
+
+rm -rf "${GOTMPDIR}"
