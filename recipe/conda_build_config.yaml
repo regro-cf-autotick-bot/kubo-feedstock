@@ -7,3 +7,5 @@ go_compiler:  # [win]
 - go-nocgo  # [win]
 openssl:
 - "1.1.1"
+c_compiler_version:
+- "10"  # [linux]
