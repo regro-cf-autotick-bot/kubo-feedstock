@@ -1,5 +1,5 @@
 {% set name = "kubo" %}
-{% set version = "0.18.1" %}
+{% set version = "0.19.1" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
 
 package:
@@ -9,7 +9,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
-    sha256: c403b1e1039d0f931f14ba8a4d044630e9d366dd781f9db7feab8e2d8e6004c9
+    sha256: 810209295e4c0f44d9d0661d2c558d78f9c4c5386a12352664a0801e11b0b4c5
 
 build:
   number: 0
