@@ -30,8 +30,8 @@ requirements:
     - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.14") }}  # [osx and x86_64]
     - go-ipfs >=9000
 
-{% set cid = "/ipfs/QmQPeNsJPyVWPFDVHb77w8G42Fvo15z4bG2X8D2GhfbSXc" %}
-{% set ipfs_args = "-c ./.ipfs-repo --debug" %}
+{% set cid = "/ipfs/Qmc5gCcjYypU7y28oCALwfSvxCBskLuPKWpK4qpterKC7z" %}
+{% set ipfs_args = "--debug" %}
 
 test:
   commands:
@@ -39,11 +39,11 @@ test:
     - ipfs --help
     - ipfs commands
     - ipfs {{ ipfs_args }} init
-    - ipfs {{ ipfs_args }} get {{ cid }}
     - ipfs {{ ipfs_args }} ls {{ cid }}
     - ipfs {{ ipfs_args }} refs {{ cid }}
-    - ipfs {{ ipfs_args }} cat {{ cid }}/readme
-    - echo 'hello world' > hello.txt
+    - ipfs {{ ipfs_args }} get {{ cid }}
+    - ipfs {{ ipfs_args }} cat {{ cid }}
+    - echo "hello conda-forge" > hello.txt
     - ipfs {{ ipfs_args }} add hello.txt
 
 about:
