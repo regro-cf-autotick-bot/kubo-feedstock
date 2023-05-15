@@ -1,6 +1,7 @@
 {% set name = "kubo" %}
 {% set version = "0.20.0" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
+{% set min_go = ">=1.19" %}
 
 package:
   name: {{ name }}
@@ -17,8 +18,8 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - go >=1.18  # [unix]
-    - go-cgo >=1.18  # [unix]
+    - go {{ min_go }}  # [unix]
+    - go-cgo {{ min_go }}  # [unix]
     - {{ compiler('go') }}  # [win]
     - posix  # [win]
     - go-licenses
