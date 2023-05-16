@@ -1,9 +1,14 @@
-# Please consult conda-forge/core before doing this
 MACOSX_DEPLOYMENT_TARGET:  # [osx and x86_64]
 - '10.14'                  # [osx and x86_64]
 MACOSX_SDK_VERSION:        # [osx and x86_64]
 - '10.14'                  # [osx and x86_64]
-go_compiler:  # [win]
-- go-nocgo  # [win]
-c_compiler_version:
-- "10"  # [linux]
+
+go_compiler:               # [win]
+- go-nocgo                 # [win]
+go_compiler_version:       # [win]
+- '1.19'                   # [win]
+
+cgo_compiler:              # [unix]
+- go-cgo                   # [unix]
+cgo_compiler_version:      # [unix]
+- '1.19'                   # [unix]
