@@ -15,7 +15,7 @@ build:
   number: 0
 
 requirements:
-  {% set min_go = ">=1.20" %}
+  {% set min_go = ">=1.21" %}
   build:
     - {{ compiler('c') }}
     - go {{ min_go }}  # [unix]
