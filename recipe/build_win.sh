@@ -3,7 +3,7 @@ set -eux
 
 export GOPATH="$( pwd )"
 export CGO_ENABLED=0
-export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
+export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw -nofuse"
 
 # https://github.com/conda-forge/kubo-feedstock/issues/5
 export GOTMPDIR="$(pwd)/tmp"
@@ -18,7 +18,7 @@ mkdir -p "${GOTMPDIR}"
 
 module='github.com/ipfs/kubo'
 
-make -C "src/${module}" install nofuse
+go install ./cmd/ipfs
 
 pushd "src/${module}"
     bash $RECIPE_DIR/build_library_licenses.sh
