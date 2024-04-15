@@ -9,6 +9,6 @@ channel_targets:
 go_compiler:
 - go-nocgo
 go_compiler_version:
-- '1.21'
+- '1.22'
 target_platform:
 - win-64
