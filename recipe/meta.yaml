@@ -1,7 +1,6 @@
 {% set name = "kubo" %}
 {% set version = "0.28.0" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
-{% set min_go = ">=1.21" %}
 
 package:
   name: {{ name }}
@@ -16,7 +15,8 @@ build:
   number: 0
 
 requirements:
-  {% set min_go = ">=1.21" %}
+  # from e.g. https://github.com/ipfs/kubo/blob/v0.28.0/go.mod#L253
+  {% set min_go = ">=1.22" %}
   build:
     - {{ compiler('c') }}
     - go {{ min_go }}  # [unix]

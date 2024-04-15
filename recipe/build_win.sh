@@ -18,9 +18,9 @@ mkdir -p "${GOTMPDIR}"
 
 module='github.com/ipfs/kubo'
 
+make -C "src/${module}" install nofuse
 
 pushd "src/${module}"
-    go install ./cmd/ipfs
     bash $RECIPE_DIR/build_library_licenses.sh
 popd
 
