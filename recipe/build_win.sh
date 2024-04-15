@@ -3,7 +3,7 @@ set -eux
 
 export GOPATH="$( pwd )"
 export CGO_ENABLED=0
-export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw -nofuse"
+export GOFLAGS="-buildmode=pie -trimpath -ldflags=-linkmode=external -mod=vendor -modcacherw"
 
 # https://github.com/conda-forge/kubo-feedstock/issues/5
 export GOTMPDIR="$(pwd)/tmp"
