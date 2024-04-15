@@ -1,5 +1,3 @@
-{% set min_go = ">=1.21" %}
-{% set min_go = ">=1.21" %}
 {% set name = "kubo" %}
 {% set version = "0.28.0" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
