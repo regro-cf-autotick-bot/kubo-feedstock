@@ -12,3 +12,4 @@ cgo_compiler:              # [unix]
 - go-cgo                   # [unix]
 cgo_compiler_version:      # [unix]
 - '1.22'                   # [unix]
+
