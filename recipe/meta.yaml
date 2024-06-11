@@ -1,5 +1,6 @@
+{% set min_go = ">=1.22" %}
 {% set name = "kubo" %}
-{% set version = "0.28.0" %}
+{% set version = "0.29.0" %}
 {% set gomodule = "github.com/ipfs/" ~ name %}
 
 package:
@@ -9,7 +10,7 @@ package:
 source:
   - folder: src/{{ gomodule }}
     url: https://{{ gomodule }}/releases/download/v{{ version }}/{{ name }}-source.tar.gz
-    sha256: 9eaf4da5b2bd16a974a354c6f29f652259ca527c6f30c8a6cfc018295a339306
+    sha256: b9d095c80dcd377442995b5d22371c7f2fd1ca6bebb06268c6517c0e26a93f88
 
 build:
   number: 0
@@ -19,6 +20,7 @@ requirements:
   {% set min_go = ">=1.22" %}
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - go {{ min_go }}  # [unix]
     - go-cgo {{ min_go }}  # [unix]
     - {{ compiler('go') }}  # [win]
@@ -28,7 +30,6 @@ requirements:
   host:
     - openssl  # [unix]
   run_constrained:
-    - __osx >={{ MACOSX_DEPLOYMENT_TARGET|default("10.14") }}  # [osx and x86_64]
     - go-ipfs >=9000
 
 {% set cid = "/ipfs/Qmc5gCcjYypU7y28oCALwfSvxCBskLuPKWpK4qpterKC7z" %}
