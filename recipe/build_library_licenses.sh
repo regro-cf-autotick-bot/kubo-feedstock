@@ -54,9 +54,13 @@ go-licenses save \
     --ignore=flag \
     --ignore=fmt \
     --ignore=go/ast \
+    --ignore=go/build/constraint \
+    --ignore=go/doc/comment \
     --ignore=go/format \
+    --ignore=go/internal/typeparams \
     --ignore=go/parser \
     --ignore=go/printer \
+    --ignore=go/scanner \
     --ignore=go/token \
     --ignore=hash \
     --ignore=hash/adler32 \
@@ -66,20 +70,24 @@ go-licenses save \
     --ignore=internal/bytealg \
     --ignore=internal/byteorder \
     --ignore=internal/chacha8rand \
+    --ignore=internal/concurrent \
     --ignore=internal/cpu \
     --ignore=internal/fmtsort \
     --ignore=internal/godebug \
     --ignore=internal/godebugs \
     --ignore=internal/goexperiment \
     --ignore=internal/itoa \
+    --ignore=internal/nettrace \
     --ignore=internal/oserror \
     --ignore=internal/profilerecord \
     --ignore=internal/race \
+    --ignore=internal/singleflight \
     --ignore=internal/stringslite \
     --ignore=internal/syscall/execenv \
     --ignore=internal/syscall/windows \
     --ignore=internal/syscall/windows/registry \
     --ignore=internal/sysinfo \
+    --ignore=internal/weak \
     --ignore=io \
     --ignore=io/fs \
     --ignore=io/ioutil \
@@ -87,6 +95,7 @@ go-licenses save \
     --ignore=log \
     --ignore=log/internal \
     --ignore=log/slog \
+    --ignore=maps \
     --ignore=math \
     --ignore=math/big \
     --ignore=math/bits \
@@ -125,11 +134,20 @@ go-licenses save \
     --ignore=time \
     --ignore=unicode \
     --ignore=unique \
+    --ignore=vendor/golang.org/x/crypto/chacha20 \
     --ignore=vendor/golang.org/x/crypto/chacha20poly1305 \
     --ignore=vendor/golang.org/x/crypto/cryptobyte \
     --ignore=vendor/golang.org/x/crypto/cryptobyte/asn1 \
     --ignore=vendor/golang.org/x/crypto/hkdf \
+    --ignore=vendor/golang.org/x/crypto/internal/alias \
+    --ignore=vendor/golang.org/x/crypto/internal/poly1305 \
     --ignore=vendor/golang.org/x/crypto/sha3 \
+    --ignore=vendor/golang.org/x/net/dns/dnsmessage \
+    --ignore=vendor/golang.org/x/net/http/httpguts \
+    --ignore=vendor/golang.org/x/net/http/httpproxy \
+    --ignore=vendor/golang.org/x/net/http2/hpack \
+    --ignore=vendor/golang.org/x/net/idna \
+    --ignore=vendor/golang.org/x/sys/cpu \
     --save_path "$LIBRARY_LICENSES_PATH"
 
 find "$LIBRARY_LICENSES_PATH"
