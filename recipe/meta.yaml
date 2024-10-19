@@ -57,7 +57,6 @@ about:
     - src/{{ gomodule }}/LICENSE-APACHE
     - src/{{ gomodule }}/LICENSE-MIT
     - library_licenses/
-    - go-licenses.log
 
   summary: IPFS implementation in Go
 
