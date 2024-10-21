@@ -10,7 +10,6 @@ export GOTMPDIR="$(pwd)/tmp"
 
 mkdir -p "${GOTMPDIR}"
 
-omissions from the unix build, needs investigation
 export GOTAGS="openssl"
 export CGO_CFLAGS="${CFLAGS}"
 export CGO_CXXFLAGS="${CPPFLAGS}"
